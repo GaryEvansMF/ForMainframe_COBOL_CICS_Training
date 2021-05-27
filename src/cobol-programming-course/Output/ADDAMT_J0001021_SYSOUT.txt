@@ -1,0 +1,6 @@
+ENTER NAME       (15 CHARACTERS)                                                                                          
+Enter amount of first purchase (5 digits)                                                                                 
+Enter amount of second purchase (5 digits)                                                                                
+Enter amount of third purchase (5 digits)                                                                                 
+CUSTOMER       Total Amount = 000090                                                                                      
+MORE INPUT DATA (YES/NO)?                                                                                                 

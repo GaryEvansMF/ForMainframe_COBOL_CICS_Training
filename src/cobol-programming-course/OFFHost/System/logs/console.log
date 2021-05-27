@@ -1,0 +1,78 @@
+210521 10220153                     CASCD0100I ES Threaded Daemon Initialized (Ver CAS 6.0.00) process-id = 35728 (10:22:01.21) 10:22:01
+210521 10220153                     CASCD0099I ES Build Tag: ED6.0/20201116_PU04 10:22:01
+210521 10220251                     CASCD0120I Server manager created for ES OMPTRAIN, process-id = 22500 10:22:02
+210521 10220338      22500 OMPTRAIN CASSI0000I Server manager initialization started 10:22:03
+210521 10220343      22500 OMPTRAIN CASSI4005I Retrieving ES configuration from MFDS (127.0.0.1:86) 10:22:03
+210521 10220359      22500 OMPTRAIN CASSI4006I Single signon is not  enforced for CICS clients and is  enforced for IMS TM clients for this startup 10:22:03
+210521 10220359      22500 OMPTRAIN CASSI9026I Region initializing in Cold startup mode. 10:22:03
+210521 10220361      22500 OMPTRAIN CASSI1802I Dynamic debug attachment permitted 10:22:03
+210521 10220361      22500 OMPTRAIN CASSI0012I Region running in 32 bit mode 10:22:03
+210521 10220361      22500 OMPTRAIN CASSE0011I Region is running with Resource security disabled. 10:22:03
+210521 10220370      22500 OMPTRAIN CASSI0017W ES support for CICS WEBSERVICES is disabled. CCSID tables 00000 to Unicode(UCS) not found 10:22:03
+210521 10220395      22500 OMPTRAIN CASSI1747W Group DEMOSIT specified in startup list not found 10:22:03
+210521 10220396      22500 OMPTRAIN CASSI0001I Region will use SYSID DEMO, local CCSID 00001 and ascii CCSID 00001 10:22:03
+210521 10220400                     CASCD1095I ES TRC Service Process created for Server OMPTRAIN, process-id = 31676 10:22:04
+210521 10220403                     CASCD1075I ES TSC Service Process created for Server OMPTRAIN, process-id = 31304 10:22:04
+210521 10220408                     CASCD1038I ES Communications Server created, ES OMPTRAIN, process-id = 26636 10:22:04
+210521 10220413      22500 OMPTRAIN CASKC1000I ES concurrent request limit: 0000000010 10:22:04
+210521 10220413      22500 OMPTRAIN CASSI1000I Server Manager initialization completed successfully 10:22:04
+210521 10220430      22500 OMPTRAIN JES000051I Job Entry Subsystem (JES) services initialized 10:22:04
+210521 10220430      22500 OMPTRAIN JES000059I JES 5 digit job numbering support enabled 10:22:04
+210521 10220437                     CASCD1060I JES Initiator created for Server OMPTRAIN, process-id = 39060 10:22:04
+210521 10220438      22500 OMPTRAIN CASBJ0023I Batch initiator OMPTRAIN: class(es) "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" 10:22:04
+210521 10220441                     CASCD0127I SEP 00001 created for ES OMPTRAIN, process-id = 31128 10:22:04
+210521 10220445                     CASCD0127I SEP 00002 created for ES OMPTRAIN, process-id = 31588 10:22:04
+210521 10220524      31676 OMPTRAIN CASTS1007I ES TRC Service Process initialization started 10:22:05
+210521 10220529      31304 OMPTRAIN CASTS0007I ES TSC Service Process initialization started 10:22:05
+210521 10220533      31676 OMPTRAIN CASTS1002I ES TRC Service Process initialization complete 10:22:05
+210521 10220537      31304 OMPTRAIN CASTS5115I ES TSC Log facility file: C:\OpenMainframeProject\cobol-programming-course/OFFHOST/system\Logs\LOGTSTDQ.dat 10:22:05
+210521 10220538      31304 OMPTRAIN CASTS5114W ES TSC Log facility file not properly closed previously 10:22:05
+210521 10220538      31304 OMPTRAIN CASTS5116I ES TSC Log facility file size:      4 blocks (      316,236 bytes) 10:22:05
+210521 10220538      31304 OMPTRAIN CASTS5117I ES TSC Log facility is running with 4 buffers of 63,020 bytes each 10:22:05
+210521 10220541      31304 OMPTRAIN CASTS0002I ES TSC Service Process initialization complete 10:22:05
+210521 10220548                     CASCD1071I Administration SEP created for Server OMPTRAIN, process-id = 19452 10:22:05
+210521 10220559      26636 OMPTRAIN CASCS5001I Communications interface 01 initialization started 10:22:05
+210521 10220567      26636 OMPTRAIN CASCS5003I Communications interface 01 initialization complete 10:22:05
+210521 10220578      39060 OMPTRAIN CASBJ0006I Batch initiator initialization started 10:22:05
+210521 10220579      31128 OMPTRAIN CASSI1500I SEP initialization started 10:22:05
+210521 10220582      31588 OMPTRAIN CASSI1500I SEP initialization started 10:22:05
+210521 10220625      31128 OMPTRAIN CASSI1600I SEP initialization completed successfully 10:22:06
+210521 10220641      31128 OMPTRAIN JES000042I SSTM not enabled: CICS 10:22:06
+210521 10220642      31128 OMPTRAIN CASSI1425I TS non-recoverable cold started 10:22:06
+210521 10220642      31128 OMPTRAIN CASSI1425I TS recoverable cold started 10:22:06
+210521 10220643      31128 OMPTRAIN CASSI1426I TD non-recoverable cold started 10:22:06
+210521 10220643      31128 OMPTRAIN CASSI1426I TD recoverable cold started 10:22:06
+210521 10220643      31128 OMPTRAIN CASSI5001I PLTPI Phase 1 - No PLT Specified 10:22:06
+210521 10220643      31128 OMPTRAIN CASSI5040I Active SEP memory strategy set to x'00000001', retain count 100 10:22:06
+210521 10220668      19452 OMPTRAIN CASSI1500I SEP initialization started 10:22:06
+210521 10220700      19452 OMPTRAIN CASSI1600I SEP initialization completed successfully 10:22:07
+210521 10220702      39060 OMPTRAIN CASBJ0005I Batch initiator started for job classes "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" 10:22:07
+210521 10220709      26636 OMPTRAIN CASCS5100I Communications Process instance 01 is ready to accept requests 10:22:07
+210521 10220712      31588 OMPTRAIN CASSI1600I SEP initialization completed successfully 10:22:07
+210521 10220725      31588 OMPTRAIN CASSI5021I PLTPI Phase 2 - No PLT Specified 10:22:07
+210521 10280792                     CASCD1087I Cobdebugremote process created for Server OMPTRAIN, process-id = 25476 10:28:07
+210521 10280792      31588 OMPTRAIN CASSI1809I Dynamic debugger attached. Cobdebugremote on port 49480 10:28:07
+210521 10281591      19452 OMPTRAIN JCLCM0187I J0001023 CBL0001J JOB  SUBMITTED (JOBNAME=CBL0001J,JOBNUM=0001023) 10:28:15
+210521 10281592      19452 OMPTRAIN JCLCM0180I J0001023 CBL0001J Job ready for execution. 10:28:15
+210521 10281595      22500 OMPTRAIN JES000004I J0001023 CBL0001J JOB  DISPATCHED 10:28:15
+210521 10281607      39060 OMPTRAIN JCLCM0188I J0001023 CBL0001J JOB  STARTED 10:28:16
+210521 10282809      39060 OMPTRAIN JCLCM0182I J0001023 CBL0001J JOB  ENDED   - COND CODE 0000 10:28:28
+210521 10284224      31588 OMPTRAIN CASSI1806I Dynamic debugger detached. 10:28:42
+210521 10285444                     CASCD1089I Cobdebugremote process for Server OMPTRAIN has terminated normally 10:28:54
+210521 10314874      19452 OMPTRAIN JCLCM0187I J0001024 CBL0001J JOB  SUBMITTED (JOBNAME=CBL0001J,JOBNUM=0001024) 10:31:48
+210521 10314876      19452 OMPTRAIN JCLCM0180I J0001024 CBL0001J Job ready for execution. 10:31:48
+210521 10314880      22500 OMPTRAIN JES000004I J0001024 CBL0001J JOB  DISPATCHED 10:31:48
+210521 10314888      39060 OMPTRAIN JCLCM0188I J0001024 CBL0001J JOB  STARTED 10:31:48
+210521 10314909      39060 OMPTRAIN JCLCM0182I J0001024 CBL0001J JOB  ENDED   - COND CODE 0000 10:31:49
+210524 21312820                     CASCD1057S JES Initiator for Server OMPTRAIN abended by signal 0000000016 21:31:28
+210524 21312832                     CASCD1074S Administration SEP for Server OMPTRAIN abended by signal 0000000002 21:31:28
+210524 21312835                     CASCD1078S ES TSC Service Process for Region OMPTRAIN abended by signal 0000000002 21:31:28
+210524 21312838                     CASCD1098S ES TRC Service Process for Region OMPTRAIN abended by signal 0000000002 21:31:28
+210524 21312924      23180 OMPTRAIN CASSP0002I Server manager informed of process termination, pinfo =  B,0000039060 21:31:29
+210524 21312926      29012 OMPTRAIN CASSP0002I Server manager informed of process termination, pinfo =  I,0000019452 21:31:29
+210524 21312927      26312 OMPTRAIN CASSP0002I Server manager informed of process termination, pinfo =  K,0000031304 21:31:29
+210524 21312932      23500 OMPTRAIN CASSP0002I Server manager informed of process termination, pinfo =  N,0000031676 21:31:29
+210524 21312934                     CASCD0152S Server manager OMPTRAIN has abended due to signal 0000000002 21:31:29
+210524 21312934                     CASCD0139I ES Daemon auto-shutdown started 21:31:29
+210524 21312967                     CASCD0101I ES Daemon Terminated 21:31:29
+210524 21312967                     CASCD0174I ES Console process termination control thread exited 21:31:29

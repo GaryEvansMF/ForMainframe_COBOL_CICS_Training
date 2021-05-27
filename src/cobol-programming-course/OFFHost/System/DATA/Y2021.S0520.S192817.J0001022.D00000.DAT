@@ -1,0 +1,156 @@
+     *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+     *-*-*  Micro Focus ESJCL  EBCDIC JES2 Version ED6.0_PU4C                                  *-*-*
+     *-*-*  Copyright (C) Micro Focus 1997-2020. All rights reserved.                          *-*-*
+     *-*-*  Job: 0001022 Name: ADDAMT   User: mfuser   Date: 05/20/21 Time: 19:28:17           *-*-*
+     *-*-*  File:  "C:\OPENMAINFRAMEPROJECT\COBOL-P*G STARTED\LABS\JCL\ADDAMT.JCL"             *-*-*
+     *-*-*  DSN:                                                                               *-*-*
+     *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+   1 //ADDAMT   JOB 1,NOTIFY=&SYSUID
+     SUBSTITUTION - 1,NOTIFY=MFUSER
+   2 //***************************************************/
+   3 //COBRUN  EXEC IGYWCL
+     XXIGYWCL PROC  LNGPRFX='IGY630',LIBPRFX='CEE',SRC=COBOL
+     XX*********************************************************************
+     XX*  IBM Enterprise COBOL for z/OS                                    *
+     XX*               Version 6 Release 3 Modification 0                  *
+     XX*********************************************************************
+     XXCOBOL   EXEC PGM=IGYCRCTL,REGION=0M
+     XXSTEPLIB  DD  DSNAME=&LNGPRFX..SIGYCOMP,DISP=SHR
+     SUBSTITUTION - DSNAME=IGY630.SIGYCOMP,DISP=SHR
+     XX         DD  DSNAME=&LIBPRFX..SCEERUN,DISP=SHR
+     SUBSTITUTION - DSNAME=CEE.SCEERUN,DISP=SHR
+     XX         DD  DSNAME=&LIBPRFX..SCEERUN2,DISP=SHR
+     SUBSTITUTION - DSNAME=CEE.SCEERUN2,DISP=SHR
+   4 //COBOL.SYSIN  DD DSN=&SYSUID..CBL(ADDAMT),DISP=SHR
+     SUBSTITUTION - DSN=MFUSER.CBL(ADDAMT),DISP=SHR
+     X/SYSIN    DD  DSNAME=&SYSUID..CBL(&SRC),DISP=SHR
+     SUBSTITUTION - DSNAME=MFUSER.CBL(COBOL),DISP=SHR
+     XXSYSPRINT DD  SYSOUT=*
+     XXSYSLIN   DD  DSNAME=&&LOADSET,UNIT=SYSALLDA,
+     XX             DISP=(MOD,PASS),SPACE=(CYL,(1,1)),VOL=(,,,1)
+     XXSYSUT1   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1)),VOL=(,,,1)
+     XXSYSUT2   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1)),VOL=(,,,1)
+     XXSYSUT3   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1)),VOL=(,,,1)
+     XXSYSUT4   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1)),VOL=(,,,1)
+     XXSYSUT5   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1)),VOL=(,,,1)
+     XXSYSUT6   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1)),VOL=(,,,1)
+     XXSYSUT7   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1)),VOL=(,,,1)
+     XXSYSUT8   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1)),VOL=(,,,1)
+     XXSYSUT9   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1)),VOL=(,,,1)
+     XXSYSUT10  DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1)),VOL=(,,,1)
+     XXSYSUT11  DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1)),VOL=(,,,1)
+     XXSYSUT12  DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1)),VOL=(,,,1)
+     XXSYSUT13  DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1)),VOL=(,,,1)
+     XXSYSUT14  DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1)),VOL=(,,,1)
+     XXSYSUT15  DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1)),VOL=(,,,1)
+     XXSYSMDECK DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1)),VOL=(,,,1)
+     XXSUCCESS IF RC < 8 THEN
+     XXLKED    EXEC PGM=IEWBLINK,REGION=0M
+     XXSYSLIB   DD  DSNAME=&LIBPRFX..SCEELKEX,DISP=SHR
+     SUBSTITUTION - DSNAME=CEE.SCEELKEX,DISP=SHR
+     XX         DD  DSNAME=&LIBPRFX..SCEELKED,DISP=SHR
+     SUBSTITUTION - DSNAME=CEE.SCEELKED,DISP=SHR
+     XXSYSPRINT DD  SYSOUT=*
+     XXSYSLIN   DD  DSNAME=&&LOADSET,DISP=(OLD,DELETE)
+     XX         DD  DDNAME=SYSIN
+**** JCLCM0475I DD CHANGED TO DUMMY (DDNAME= MISSING)
+   5 //LKED.SYSLMOD DD DSN=&SYSUID..LOAD(ADDAMT),DISP=SHR
+     SUBSTITUTION - DSN=MFUSER.LOAD(ADDAMT),DISP=SHR
+     X/SYSLMOD  DD  DSNAME=&SYSUID..LOAD(&SRC),DISP=SHR
+     SUBSTITUTION - DSNAME=MFUSER.LOAD(COBOL),DISP=SHR
+     XX        ENDIF
+   6 //***************************************************/
+   7 // IF RC = 0 THEN
+   8 //***************************************************/
+   9 //STEP2 EXEC PGM=ADDAMT
+  10 //STEPLIB   DD DSN=&SYSUID..LOAD,DISP=SHR
+     SUBSTITUTION - DSN=MFUSER.LOAD,DISP=SHR
+  11 //SYSOUT    DD SYSOUT=*,OUTLIM=15000
+  12 //CEEDUMP   DD DUMMY
+  13 //SYSUDUMP  DD DUMMY
+  14 //SYSIN     DD *
+  20 //***************************************************/
+  21 // ELSE
+  22 // ENDIF
+**** JCLCM0180I Job ready for execution.
+**** Execution on Server OMPTRAIN  Process      30840
+
+     19:28:17 JCLCM0188I JOB  STARTED
+
+     19:28:17 JCLCM0190I STEP STARTED   COBRUN.COBOL
+     19:28:17 JCLCM0199I Program MFCOMP   is COBOL VSC2  ASCII  Big-Endian    NOAMODE.
+     IGY630.SIGYCOMP                                                   STEPLIB
+                                                                        DEFERRED
+     CEE.SCEERUN                                                       STEPLIB[0002]
+                                                                        DEFERRED
+     CEE.SCEERUN2                                                      STEPLIB[0003]
+                                                                        DEFERRED
+     MFUSER.CBL(ADDAMT)                                                SYSIN
+      ADDAMT.DLL                                                        RETAINED
+     Y2021.S0520.S192817.J0001022.D00001.SYSPRINT                      SYSPRINT
+      C:\OPENMAINFRAMEPROJECT\COBOL-PR*17.J0001022.D00001.SYSPRINT.DAT  REMOVED
+     Y2021.S0520.S192817.J0001022.ANDAND.LOADSET                       SYSLIN
+      C:\OPENMAINFRAMEPROJECT\COBOL-PR*817.J0001022.ANDAND.LOADSET.DAT  PASSED
+     Y2021.S0520.S192817.J0001022.D00002.SYSUT1                        SYSUT1
+      C:\OPENMAINFRAMEPROJECT\COBOL-PR*2817.J0001022.D00002.SYSUT1.DAT  DELETED
+     Y2021.S0520.S192817.J0001022.D00003.SYSUT2                        SYSUT2
+      C:\OPENMAINFRAMEPROJECT\COBOL-PR*2817.J0001022.D00003.SYSUT2.DAT  DELETED
+     Y2021.S0520.S192817.J0001022.D00004.SYSUT3                        SYSUT3
+      C:\OPENMAINFRAMEPROJECT\COBOL-PR*2817.J0001022.D00004.SYSUT3.DAT  DELETED
+     Y2021.S0520.S192817.J0001022.D00005.SYSUT4                        SYSUT4
+      C:\OPENMAINFRAMEPROJECT\COBOL-PR*2817.J0001022.D00005.SYSUT4.DAT  DELETED
+     Y2021.S0520.S192817.J0001022.D00006.SYSUT5                        SYSUT5
+      C:\OPENMAINFRAMEPROJECT\COBOL-PR*2817.J0001022.D00006.SYSUT5.DAT  DELETED
+     Y2021.S0520.S192817.J0001022.D00007.SYSUT6                        SYSUT6
+      C:\OPENMAINFRAMEPROJECT\COBOL-PR*2817.J0001022.D00007.SYSUT6.DAT  DELETED
+     Y2021.S0520.S192817.J0001022.D00008.SYSUT7                        SYSUT7
+      C:\OPENMAINFRAMEPROJECT\COBOL-PR*2817.J0001022.D00008.SYSUT7.DAT  DELETED
+     Y2021.S0520.S192817.J0001022.D00009.SYSUT8                        SYSUT8
+      C:\OPENMAINFRAMEPROJECT\COBOL-PR*2817.J0001022.D00009.SYSUT8.DAT  DELETED
+     Y2021.S0520.S192817.J0001022.D00010.SYSUT9                        SYSUT9
+      C:\OPENMAINFRAMEPROJECT\COBOL-PR*2817.J0001022.D00010.SYSUT9.DAT  DELETED
+     Y2021.S0520.S192817.J0001022.D00011.SYSUT10                       SYSUT10
+      C:\OPENMAINFRAMEPROJECT\COBOL-PR*817.J0001022.D00011.SYSUT10.DAT  DELETED
+     Y2021.S0520.S192817.J0001022.D00012.SYSUT11                       SYSUT11
+      C:\OPENMAINFRAMEPROJECT\COBOL-PR*817.J0001022.D00012.SYSUT11.DAT  DELETED
+     Y2021.S0520.S192817.J0001022.D00013.SYSUT12                       SYSUT12
+      C:\OPENMAINFRAMEPROJECT\COBOL-PR*817.J0001022.D00013.SYSUT12.DAT  DELETED
+     Y2021.S0520.S192817.J0001022.D00014.SYSUT13                       SYSUT13
+      C:\OPENMAINFRAMEPROJECT\COBOL-PR*817.J0001022.D00014.SYSUT13.DAT  DELETED
+     Y2021.S0520.S192817.J0001022.D00015.SYSUT14                       SYSUT14
+      C:\OPENMAINFRAMEPROJECT\COBOL-PR*817.J0001022.D00015.SYSUT14.DAT  DELETED
+     Y2021.S0520.S192817.J0001022.D00016.SYSUT15                       SYSUT15
+      C:\OPENMAINFRAMEPROJECT\COBOL-PR*817.J0001022.D00016.SYSUT15.DAT  DELETED
+     Y2021.S0520.S192817.J0001022.D00017.SYSMDECK                      SYSMDECK
+      C:\OPENMAINFRAMEPROJECT\COBOL-PR*17.J0001022.D00017.SYSMDECK.DAT  DELETED
+---> 19:28:17 JCLCM0191I STEP ENDED     COBRUN.COBOL - COND CODE 0000
+
+     19:28:17 JCLCM0190I STEP STARTED   COBRUN.LKED
+     19:28:17 JCLCM0220I Job restart will not be permitted at this step.
+     19:28:17 JCLCM0199I Program MFLINK   is COBOL VSC2  ASCII  Big-Endian    NOAMODE.
+     CEE.SCEELKEX                                                      SYSLIB
+                                                                        RETAINED
+     CEE.SCEELKED                                                      SYSLIB[0002]
+                                                                        RETAINED
+     Y2021.S0520.S192817.J0001022.D00018.SYSPRINT                      SYSPRINT
+      C:\OPENMAINFRAMEPROJECT\COBOL-PR*17.J0001022.D00018.SYSPRINT.DAT  REMOVED
+     Y2021.S0520.S192817.J0001022.ANDAND.LOADSET                       SYSLIN
+      C:\OPENMAINFRAMEPROJECT\COBOL-PR*817.J0001022.ANDAND.LOADSET.DAT  DELETED
+     DUMMY                                                             SYSLIN[0002]
+     MFUSER.LOAD(ADDAMT)                                               SYSLMOD
+      ADDAMT.DLL                                                        RETAINED
+---> 19:28:17 JCLCM0191I STEP ENDED     COBRUN.LKED - COND CODE 0000
+
+     19:28:17 JCLCM0190I STEP STARTED   STEP2
+     19:28:17 JCLCM0199I Program ADDAMT   is COBOL VSC2  EBCDIC Big-Endian    AMODE31.
+     MFUSER.LOAD                                                       STEPLIB
+                                                                        DEFERRED
+     Y2021.S0520.S192817.J0001022.D00019.SYSOUT                        SYSOUT
+      C:\OPENMAINFRAMEPROJECT\COBOL-PR*2817.J0001022.D00019.SYSOUT.DAT  SPOOLED
+     DUMMY                                                             CEEDUMP
+     Y2021.S0520.S192817.J0001022.D00020.SYSIN                         SYSIN
+      C:\OPENMAINFRAMEPROJECT\COBOL-PR*92817.J0001022.D00020.SYSIN.DAT  DELETED
+---> 19:28:17 JCLCM0191I STEP ENDED     STEP2 - COND CODE 0000
+
+---> 19:28:17 JCLCM0182I JOB  ENDED   - COND CODE 0000
